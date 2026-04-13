@@ -1,0 +1,12 @@
+#Description
+This is the simple body type classifier project.
+
+
+#Features
+Body type classifier by height, weight, etc.
+It gives category-specific output, e.g., obese, overweight, underweight, and normal.
+
+#Tech-Stack
+-Python
+-Scikit Learn
+-Joblib
