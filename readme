@@ -1,7 +1,6 @@
 #Description
 This is the simple body type classifier project.
 
-
 #Features
 Body type classifier by height, weight, etc.
 It gives category-specific output, e.g., obese, overweight, underweight, and normal.
@@ -13,3 +12,6 @@ It gives category-specific output, e.g., obese, overweight, underweight, and nor
 -Scikit Learn
 -Joblib
 -Tailwindcss
+
+#Datasets
+Kaggle: Obesity Classification Dataset - Sujith K Mandala 
