@@ -20,8 +20,8 @@ category= dataset.select_dtypes(include=['object','str']).columns
 scaler=StandardScaler()
 dataset[numeric]=scaler.fit_transform(dataset[numeric])
 
-joblib.dump(scaler,'KNN/model_body/scaler.joblib')
-joblib.dump(numeric,'KNN/model_body/numeric_val.joblib')
+joblib.dump(scaler,'model_body/scaler.joblib')
+joblib.dump(numeric,'model_body/numeric_val.joblib')
 
 
 lb_encoder=LabelEncoder()
@@ -31,8 +31,8 @@ df=pd.DataFrame(dataset)
 for col in category:
     df[col]=lb_encoder.fit_transform(df[col])
 
-joblib.dump(lb_encoder,'KNN/model_body/encoder.joblib')
-joblib.dump(category,'KNN/model_body/category_val.joblib')
+joblib.dump(lb_encoder,'model_body/encoder.joblib')
+joblib.dump(category,'model_body/category_val.joblib')
 
 X=df.drop(columns=['Label'])
 y=df['Label']
@@ -42,8 +42,8 @@ x_train,x_test,y_train,y_test=train_test_split(X,y, test_size= 0.2 , random_stat
 knn= KNeighborsClassifier(n_neighbors=5, metric="minkowski", p=2, weights="uniform")
 model= knn.fit(x_train,y_train)
 
-joblib.dump(list(X.columns), 'KNN/model_body/feature_names.pkl')
-joblib.dump(model,'KNN/model_body/model.joblib')
+joblib.dump(list(X.columns), 'model_body/feature_names.pkl')
+joblib.dump(model,'model_body/model.joblib')
 y_pred= model.predict(x_test)
 
 
